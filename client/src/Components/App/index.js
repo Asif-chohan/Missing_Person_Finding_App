@@ -3,7 +3,6 @@ import 'typeface-roboto/index.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
-import UltimateToDoApp from '../navigation'
 
 
 //Main App Component and Setup React Toastify
@@ -25,7 +24,6 @@ class App extends Component {
                     />
 
                   {/* Renders the whole app */}
-                  <UltimateToDoApp />
     
       </div>
     );
