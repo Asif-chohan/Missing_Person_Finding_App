@@ -17,6 +17,6 @@ const siginAction = (data) => dispatch => {
             console.log(err)
         })
 }
-
+ 
 
 export { siginAction }
