@@ -3,7 +3,7 @@ import 'typeface-roboto/index.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
-
+import MissingPersonApp from '../Navigation'
 
 //Main App Component and Setup React Toastify
 
@@ -24,6 +24,7 @@ class App extends Component {
                     />
 
                   {/* Renders the whole app */}
+                  <MissingPersonApp />
     
       </div>
     );
