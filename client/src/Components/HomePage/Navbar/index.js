@@ -48,9 +48,12 @@ class Navbar extends React.Component {
                   }}
                   onChange={this.handleChange}
                 >
-                  <Tab className={classes.tabCustom} label="Item One" />
-                  <Tab label="Item Two" />
-                  <Tab label="Item Three" />
+                  <Tab className={classes.tabCustom} label="Home" />
+                  <Tab className={classes.tabCustom} label="Signin" />
+
+                  <Tab className={classes.tabCustom} label="Contact us" />
+                  <Tab className={classes.tabCustom} label="Blogs" />
+
                 </Tabs>
               </Grid>
             </Grid>
