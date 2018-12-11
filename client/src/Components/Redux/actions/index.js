@@ -11,7 +11,7 @@ const siginAction = (data) => dispatch => {
                         payload: res
                     }
                 }
-            )
+            ) 
         })
         .catch(err=>{
             console.log(err)
