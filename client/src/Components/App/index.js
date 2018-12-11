@@ -1,35 +1,46 @@
 import React, { Component } from 'react';
-import 'typeface-roboto/index.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
 
-//Main App Component and Setup React Toastify
+import Login from './login';
+import Signup from './singup';
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
 
 class App extends Component {
   render() {
-    return (
-      <div>
-        <ToastContainer
-                    position="top-right"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    rtl={false}
-                    pauseOnVisibilityChange
-                    draggable
-                    pauseOnHover
-                    />
+    const { classes } = this.props;
 
-                  {/* Renders the whole app */}
-    
+    return (
+      <div className={classes.root}>
+        
+            <Signup />
+        
       </div>
     );
   }
 }
 
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 
-export default connect(null,null)(App);
+
+
+
+
+export default withStyles(styles)(App);
