@@ -3,7 +3,7 @@ import 'typeface-roboto/index.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
-
+import Login from './login';
 
 //Main App Component and Setup React Toastify
 
@@ -12,19 +12,20 @@ class App extends Component {
     return (
       <div>
         <ToastContainer
-                    position="top-right"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    rtl={false}
-                    pauseOnVisibilityChange
-                    draggable
-                    pauseOnHover
-                    />
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
 
-                  {/* Renders the whole app */}
-    
+        {/* Renders the whole app */}
+        <Login />
+
       </div>
     );
   }
@@ -32,4 +33,4 @@ class App extends Component {
 
 
 
-export default connect(null,null)(App);
+export default connect(null, null)(App);
