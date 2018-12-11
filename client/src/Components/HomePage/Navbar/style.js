@@ -11,7 +11,8 @@ export const styles = {
   // },
 
   appBar: {
-    backgroundColor: "#005E58"
+    backgroundColor: "#005E58",
+    marginBottom: '40px'
   },
   tabCustom: {
     height: "65px"
@@ -23,6 +24,6 @@ export const styles = {
     backgroundColor: "yellow"
   },
   headingCustom:{
-    paddingLeft: "60px !important"
+    paddingLeft: "60px !important",
   }
 };

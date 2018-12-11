@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import ImageSlider from '../imagesSlider'
+import Tabs from './Tab'
 export default class Home extends Component {
     render() {
         return (
             <div>
                 <Navbar />
                 <ImageSlider slides={slides} />
+                <Tabs />
                
                 
             </div>
