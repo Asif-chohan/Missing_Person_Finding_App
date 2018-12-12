@@ -8,12 +8,6 @@ var missingPersonSchema = mongoose.Schema({
     description: String,
     gender: String,
     mobNO: Number,
-    area: String,
-    city: String,
-    province: String,
-    country: String,
-    longi: Number,
-    lati: Number,
 }, {
     timestamps: true,
 });

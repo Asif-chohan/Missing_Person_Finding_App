@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 8080;
 
 //error handler midelware
 // only use in development
-  App.use(errorhandler());
 
 
 
