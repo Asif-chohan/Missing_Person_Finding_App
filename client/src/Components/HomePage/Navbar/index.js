@@ -16,6 +16,7 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import logo from '../../../asserts/logo.png';
 
 class Navbar extends React.Component {
   state = {
@@ -35,12 +36,13 @@ class Navbar extends React.Component {
           <Toolbar>
             <Grid container spacing={24}>
             <Grid item xs={3} className={classes.headingCustom}>
-                <h2>Missing Person</h2>
+                {/* <h2>Missing Person</h2> */}
+                <img src={logo} style={{height:'100px',width:'200px',padding:'10px'}} />
               </Grid>
             <Grid item xs={3}>
               </Grid>
               
-              <Grid item xs={6}>
+              <Grid item xs={6} style={{ marginTop: '20px'}}>
                 <Tabs
                   value={value}
                   classes={{
@@ -49,11 +51,11 @@ class Navbar extends React.Component {
                   onChange={this.handleChange}
                 >
                   <Tab className={classes.tabCustom} label="Home" />
-                  <Tab className={classes.tabCustom} label="Signin" />
-
                   <Tab className={classes.tabCustom} label="Contact us" />
                   <Tab className={classes.tabCustom} label="Blogs" />
-
+                  {/* <Tab className={classes.tabCustom} label="Signin" /> */}
+                  <Button className={classes.signinButton} size="small" variant="contained" color="primary">SignIn</Button>
+                  
                 </Tabs>
               </Grid>
             </Grid>

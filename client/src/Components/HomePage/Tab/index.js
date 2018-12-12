@@ -41,7 +41,7 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" style={{background:'#06cf1e'}}>
           <Grid container spacing={24}>
             <Grid item xs={2} />
             <Grid item xs={10}>
