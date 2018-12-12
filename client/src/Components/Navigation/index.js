@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from '../HomePage';
 import Login from '../login';
-import Signup from '../signup'
+import Signup from '../signup';
+import ContactUs from '../contactus'
 
 export default class Navigation extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class Navigation extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={Login} /> 
           <Route exact path="/signup" component={Signup} /> 
+          <Route exact path="/contactus" component={ContactUs} /> 
 
 
         </div>
