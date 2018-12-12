@@ -13,8 +13,10 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
 import { styles } from "./style";
 import contact from './contact.png'
+import {contactus} from '../Redux/actions/index';
 
 
 
@@ -36,9 +38,10 @@ class ContactUs extends Component {
     };
 
     handleSubmitForm = event => {
+         
         event.preventDefault();
         let { username, email, blogTitle, fileUpload } = this.state;
-        if (!email.trim().length == 0 && !username.trim().length == 0 && !blogTitle.trim() == 0 && fileUpload == 0) {
+        if ( !username.trim().length == 0  && !email.trim().length == 0 && !blogTitle.trim().length==0 ) {
             const record = {
                 username,
                 email,
@@ -46,7 +49,7 @@ class ContactUs extends Component {
                 fileUpload
             };
 
-
+            this.props.contactus(record);
 
             // redirect the path
             // this.props.history.push("/");
@@ -112,11 +115,11 @@ class ContactUs extends Component {
                                     />
                                 </FormControl>
                                 <FormControl margin="normal" required fullWidth>
-                                    <InputLabel htmlFor="blogTtitle">Blog Title</InputLabel>
+                                    <InputLabel htmlFor="blogTitle">Blog Title</InputLabel>
                                     <Input
                                         onChange={this.handleInputChange}
-                                        id="blogTtitle"
-                                        name="blogTtitle"
+                                        id="blogTitle"
+                                        name="blogTitle"
                                         type="text"
                                         autoComplete="off"
                                         autoFocus
@@ -130,6 +133,7 @@ class ContactUs extends Component {
                                         id="fileUpload"
                                         name="fileUpload"
                                         type="file"
+                                        value={this.state.fileUpload}
                                         autoComplete="off"
                                         autoFocus
                                     />
@@ -157,6 +161,6 @@ class ContactUs extends Component {
 ContactUs.propTypes = {
     classes: PropTypes.object.isRequired
 };
-export default (withStyles(styles)(ContactUs));
+export default connect(null,{contactus})(withStyles(styles)(ContactUs));
 
 

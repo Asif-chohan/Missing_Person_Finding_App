@@ -7,6 +7,7 @@ import axios from 'axios';
 
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_UP = 'SIGN_UP';
+export const CONTACT_US = 'CONTACT_US';
 
 
 
@@ -37,6 +38,27 @@ export function SignUP(data) {
             toast.success("Your account is created Successfully ");
                 dispatch({
                     type: SIGN_IN,
+                    payload: data
+                });
+            }).catch(() =>{
+                toast.error("Error Occored! Please Try Again Later");
+            })
+    }
+}
+
+
+
+// Contact us Actions
+
+export function contactus(data) {
+    
+    return (dispatch) => {
+        axios.post(window.baseURL + "/user/contactus", data)
+        .then(() => {
+                
+            toast.success("your response has been  sent");
+                dispatch({
+                    type: CONTACT_US,
                     payload: data
                 });
             }).catch(() =>{

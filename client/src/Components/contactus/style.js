@@ -42,6 +42,7 @@ export const styles = theme => ({
   contact:{
     //   backgroundColor:'gray',
       height:'100vh',
+   
     
   }
 });
