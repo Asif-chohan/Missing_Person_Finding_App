@@ -6,6 +6,7 @@ import * as cookieparser from 'cookie-parser';
 import * as passport from 'passport';
 import setuppassport from './config/Passport';
 import usersRouter from './routes/users';
+import  personsRouter from './routes/missingPerson';
 var dbURI = require('./config/key');
 
 //creating App
@@ -43,6 +44,7 @@ setuppassport();
 
 //routes
 App.use('/user', usersRouter);
+App.use('/persons', personsRouter)
 
 
 //serve static files

@@ -41,7 +41,7 @@ exports.signUpPost = (req, res) => {
         else {
             res
                 .status(200)
-                .json(req.user);
+                .json("successfully registered");
         }
     });
 };

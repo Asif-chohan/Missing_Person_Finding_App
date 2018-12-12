@@ -8,6 +8,7 @@ const cookieparser = require("cookie-parser");
 const passport = require("passport");
 const Passport_1 = require("./config/Passport");
 const users_1 = require("./routes/users");
+const missingPerson_1 = require("./routes/missingPerson");
 var dbURI = require('./config/key');
 //creating App
 const App = express();
@@ -38,9 +39,7 @@ App.use(passport.session());
 Passport_1.default();
 //routes
 App.use('/user', users_1.default);
-App.get('/', (req, res) => {
-    res.send({ hi: "Hi" });
-});
+App.use('/persons', missingPerson_1.default);
 //serve static files
 App.use(express.static('./build'));
 //export App
