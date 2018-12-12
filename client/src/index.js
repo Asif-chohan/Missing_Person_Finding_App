@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
-// window.baseURL = window.location.hostname === 'localhost' ? 'http://localhost:8080' : '';
+window.baseURL = window.location.hostname === 'localhost' ? 'http://localhost:8080' : '';
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,1 +1,4 @@
-module.exports = 'mongodb://NaveedRana:RANAlove1214@ds161062.mlab.com:61062/addtodo';
+
+
+// For testing database
+module.exports = 'mongodb://localhost:27017/MissingPerson';

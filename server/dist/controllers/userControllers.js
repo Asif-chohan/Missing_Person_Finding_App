@@ -32,6 +32,9 @@ exports.authUser = (req, res) => {
 //SignUp controller
 exports.signUpPost = (req, res) => {
     let newUser = new usersSchema_1.default(req.body);
+    console.log('====================================');
+    console.log(req.body);
+    console.log('====================================');
     newUser.save((err, user) => {
         if (err) {
             res
@@ -41,7 +44,7 @@ exports.signUpPost = (req, res) => {
         else {
             res
                 .status(200)
-                .json(req.user);
+                .json("successfully registered");
         }
     });
 };

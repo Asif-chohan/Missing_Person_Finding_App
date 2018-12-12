@@ -38,9 +38,6 @@ App.use(passport.session());
 Passport_1.default();
 //routes
 App.use('/user', users_1.default);
-App.get('/', (req, res) => {
-    res.send({ hi: "Hi" });
-});
 //serve static files
 App.use(express.static('./build'));
 //export App
