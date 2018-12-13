@@ -4,10 +4,6 @@ const mongoose = require("mongoose");
 var missingPersonSchema = mongoose.Schema({
     userName: String,
     missingPersonName: String,
-    age: Number,
-    description: String,
-    gender: String,
-    mobNO: Number,
 }, {
     timestamps: true,
 });
