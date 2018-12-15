@@ -7,7 +7,6 @@ import missingPersonsModels from '../models/missingPersonSchema';
 export let addMissingPerson = (req : Request, res : Response) => {
   
     let newMissingPerson = new missingPersonsModels(req.body);
-    
     newMissingPerson.save((err, user) => {
       if (err) {
         res
@@ -20,9 +19,10 @@ export let addMissingPerson = (req : Request, res : Response) => {
       }
     });
   };
+
+  // All missing persons
   export let allMissingPersons = (req : Request, res : Response) => {
-    
-    
+     
     let query: object = {}
     missingPersonsModels.find(query).sort({ date: -1 }).exec((err:any, missingPersons: any) => {
 
@@ -33,11 +33,9 @@ export let addMissingPerson = (req : Request, res : Response) => {
         if (missingPersons.length === 0) {
             res.json('Yet there is no missing person Available')
         }
-
         // if todos are available
         else {
              res.status(200).json(missingPersons)   
         }
-    });
-    
+    });   
   };

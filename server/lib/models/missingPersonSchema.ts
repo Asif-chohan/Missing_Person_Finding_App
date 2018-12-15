@@ -3,6 +3,7 @@ import * as mongoose from 'mongoose';
 var missingPersonSchema = mongoose.Schema(
     {
         status: String,
+        missingImage:String,
         userName: String,
         missingPersonName: String,
         age: Number,
