@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from '../HomePage';
 import Login from '../login';
 import Signup from '../signup';
+import InspectorForm from '../policeForm'
 
 
 export default class Navigation extends Component {
@@ -13,12 +14,9 @@ export default class Navigation extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/PolicePortal" component={InspectorForm} />
+
      
-         
-
-
-
-
         </div>
       </Router>
     );
