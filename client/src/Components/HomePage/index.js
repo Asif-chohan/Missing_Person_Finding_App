@@ -78,20 +78,15 @@ const slides = [
       "https://kbr.id/media/?size=730x406&filename=Pakistan+Kidnappings+2_web_Naeem+Sahoutara+ed.jpg"
   },
   {
-    city: "Prague",
-    country: "Czech Republic",
+    city: "Singapore",
     img:
-      "https://i0.wp.com/www.newsbox.pk/wp-content/uploads/2016/08/web-Site.jpg?w=637"
+      "https://kbr.id/media/?size=730x406&filename=Pakistan+Kidnappings+2_web_Naeem+Sahoutara+ed.jpg"
   },
-  {
-    city: "Amsterdam",
-    country: "Netherlands",
-    img:
-      "https://www.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/05/30/Pictures/_d1b2689c-2613-11e6-a44e-cf92da887fb1.jpg"
-  },
-  {
-    city: "Moscow",
-    country: "Russia",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg"
-  }
+ 
+
+  // {
+  //   city: "Moscow",
+  //   country: "Russia",
+  //   img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg"
+  // }
 ];

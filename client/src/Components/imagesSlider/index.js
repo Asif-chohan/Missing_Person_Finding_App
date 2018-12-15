@@ -13,7 +13,7 @@ class ImageSlider extends React.Component {
     constructor(props) {
       super(props);
       
-      this.IMAGE_PARTS = 4;
+      this.IMAGE_PARTS = 1;
       
       this.changeTO = null;
       this.AUTOCHANGE_TIME = 4000;
@@ -53,7 +53,6 @@ class ImageSlider extends React.Component {
       const { activeSlide, prevSlide, sliderReady } = this.state;
       return (
         <div className={classNames('slider', { 's--ready': sliderReady })}>
-          <p className="slider__top-heading">Travelers</p>
           
           
           <div className="slider__slides">
@@ -67,7 +66,6 @@ class ImageSlider extends React.Component {
                   <h2 className="slider__slide-heading">
                     {slide.city.split('').map(l => <span>{l}</span>)}
                   </h2>
-                  <p className="slider__slide-readmore">read more</p>
                 </div>
                 <div className="slider__slide-parts">
                   {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
