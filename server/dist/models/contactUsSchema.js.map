@@ -1,0 +1,1 @@
+{"version":3,"file":"contactUsSchema.js","sourceRoot":"","sources":["../../lib/models/contactUsSchema.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AAErC,IAAI,eAAe,GAAG,QAAQ,CAAC,MAAM,CAAC;IAClC,QAAQ,EAAE,MAAM;IAChB,KAAK,EAAE,MAAM;IACb,OAAO,EAAC,MAAM;CACjB,CAAC,CAAC;AAEH,IAAI,eAAe,GAAG,QAAQ,CAAC,KAAK,CAAC,WAAW,EAAE,eAAe,CAAC,CAAA;AAClE,MAAM,CAAC,OAAO,GAAE,eAAe,CAAC"}

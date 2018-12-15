@@ -1,11 +1,5 @@
 import {Request, Response, NextFunction} from "express";
 import usersModels from '../models/usersSchema';
-
-
-
-
-
-
 //login controller
 export let getLogin = (req : Request, res : Response) => {
   if (req.user) {
@@ -40,7 +34,6 @@ export let authUser = (req : Request, res : Response) => {
 export let signUpPost = (req : Request, res : Response) => {
   
   let newUser = new usersModels(req.body);
- 
   newUser.save((err, user) => {
     if (err) {
       res
