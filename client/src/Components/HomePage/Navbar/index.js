@@ -17,6 +17,10 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import logo from '../../../asserts/logo.png';
+import {Link} from 'react-router-dom'
+
+
+
 
 class Navbar extends React.Component {
   state = {
@@ -54,8 +58,9 @@ class Navbar extends React.Component {
                   <Tab className={classes.tabCustom} label="Contact us" />
                   <Tab className={classes.tabCustom} label="Blogs" />
                   {/* <Tab className={classes.tabCustom} label="Signin" /> */}
+                  <Link to="/login">
                   <Button className={classes.signinButton} size="small" variant="contained" color="primary">SignIn</Button>
-                  
+                  </Link>
                 </Tabs>
               </Grid>
             </Grid>
