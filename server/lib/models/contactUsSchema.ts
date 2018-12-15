@@ -2,8 +2,8 @@ import * as mongoose from 'mongoose';
 
 var contactUsSchema = mongoose.Schema({
     username: String,
-    email: String,
-    message:String
+    blog: String,
+    blogTitle:String,
 });
 
 var contactUSModels = mongoose.model('contactUs', contactUsSchema)

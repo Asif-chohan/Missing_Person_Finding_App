@@ -3,6 +3,7 @@ import * as mongoose from 'mongoose';
 var foundPersonSchema = mongoose.Schema(
     {
         userName: String,
+        foundImage:String,
         foundPersonName: String,
         estimatedAge: Number,
         description: String,

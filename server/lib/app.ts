@@ -44,7 +44,8 @@ setuppassport();
 
 //routes
 App.use('/user', usersRouter);
-App.use('/persons', personsRouter)
+App.use('/persons', personsRouter);
+App.use('/contactUs')
 
 
 //serve static files

@@ -4,9 +4,8 @@ import foundPersonsModels from '../models/foundPersonSchema';
 
 
 export let addFoundPersons = (req : Request, res : Response) => {
-  
-    let newFoundPerson = new foundPersonsModels(req.body);
-    
+
+    let newFoundPerson = new foundPersonsModels(req.body); 
     newFoundPerson.save((err, user) => {
       if (err) {
         res
@@ -21,8 +20,6 @@ export let addFoundPersons = (req : Request, res : Response) => {
   };
 
   export let allFoundPersons = (req : Request, res : Response) => {
-    
-    
     let query: object = {}
     foundPersonsModels.find(query).sort({ date: -1 }).exec((err:any, foundPersons: any) => {
 
@@ -41,3 +38,28 @@ export let addFoundPersons = (req : Request, res : Response) => {
     });
     
   };
+
+  // person by name
+export const getperson = (req: Request, res: any, next: NextFunction) => {
+
+  //  person agains this provided name
+  const { missingPersonName }: any = req.params;
+
+  foundPersonsModels.find(missingPersonName).exec((err: any, person: any) => {
+
+      if (err) {
+          return res.status(404);
+      }
+      // if no person is available against provided id
+      if (person.length === 0) {
+          
+          return res.send("Sorry no person is found against this name please search by picture")
+      }
+
+      // if person is available
+      else {
+          return res.status(200).json(person);
+      }
+
+  })
+}
