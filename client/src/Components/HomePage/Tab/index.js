@@ -6,6 +6,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import MissingPersonList from "../PersonList/PersonList";
+import FoundPersonList from "../FoundPersonsList";
 
 function TabContainer(props) {
   return (
@@ -40,8 +42,11 @@ class SimpleTabs extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
-        <AppBar position="static" style={{background:'#06cf1e', marginTop: "60px"}}>
+      <div className={classes.root} style={{ backgroundColor: "#f8f8f8" }}>
+        <AppBar
+          position="static"
+          style={{ background: "#06cf1e", marginTop: "60px" }}
+        >
           <Grid container spacing={24}>
             <Grid item xs={2} />
             <Grid item xs={10}>
@@ -52,6 +57,16 @@ class SimpleTabs extends React.Component {
             </Grid>
           </Grid>
         </AppBar>
+        {value === 0 && (
+          <TabContainer>
+            <FoundPersonList />
+          </TabContainer>
+        )}
+        {value === 1 && (
+          <TabContainer>
+            <MissingPersonList />
+          </TabContainer>
+        )}
       </div>
     );
   }

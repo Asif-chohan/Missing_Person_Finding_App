@@ -13,6 +13,10 @@ export default class Navigation extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+     
+         
+
+
 
 
         </div>

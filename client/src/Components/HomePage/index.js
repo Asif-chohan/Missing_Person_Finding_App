@@ -38,7 +38,6 @@ export default class Home extends Component {
         <Search />
         <Tabs />
        
-        <PersonPage />
         <Footer />
       </div>
     );

@@ -3,17 +3,13 @@ import Card from '../Person/Card';
 import { Grid } from '@material-ui/core';
 
 const PersonList = () => (
-    <div>
-        <h1>Person List</h1>
+    <div style={{padding: "70px"}}>
+    <div style={{paddingLeft: "200px", marginTop:"40px", marginBottom: "50px"}}>
+        <h1>Missing Persons</h1>
+        </div>
         <Grid container spacing={24} >
             <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+           
         </Grid>
 
     </div>
