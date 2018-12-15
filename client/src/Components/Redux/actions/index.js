@@ -1,14 +1,9 @@
 
 import { toast } from 'react-toastify';
 import axios from 'axios';
+
+// Contants
 import { SIGN_IN, ADD_PERSON } from '../Constants';
-
-
-
-// export const SIGN_IN = 'SIGN_IN';
-// export const SIGN_UP = 'SIGN_UP';
-
-
 
 
 
