@@ -7,13 +7,13 @@ const PersonList = () => (
         <h1>Person List</h1>
         <Grid container spacing={24} >
             <Card />
+            {/* <Card />
             <Card />
             <Card />
             <Card />
             <Card />
             <Card />
-            <Card />
-            <Card />
+            <Card /> */}
         </Grid>
 
     </div>

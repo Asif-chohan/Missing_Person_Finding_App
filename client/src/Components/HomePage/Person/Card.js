@@ -18,6 +18,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Grid } from '@material-ui/core';
 
+import fakePersons from './fakePersons';
+import img from '../../../asserts/a.jpeg'
 const styles = theme => ({
     card: {
         maxWidth: 400,
@@ -59,6 +61,7 @@ class RecipeReviewCard extends React.Component {
 
         return (
             // <Grid container spacing={24}>
+            fakePersons.map((person, index) =>
             <Grid item xs={12} sm={3}>
                 <Card className={classes.card}>
                     <CardHeader
@@ -72,19 +75,24 @@ class RecipeReviewCard extends React.Component {
                                 <MoreVertIcon />
                             </IconButton>
                         }
-                        title="Shrimp and Chorizo Paella"
-                        subheader="September 14, 2016"
+                        title={person.name}
+                        subheader={person.type}
+
+                        // title="Shrimp and Chorizo Paella"
+                        // subheader="September 14, 2016"
                     />
                     <CardMedia
                         className={classes.media}
-                        image="/static/images/cards/paella.jpg"
+                        image={person.image}
+
+                        // image="/static/images/cards/paella.jpg"
                         title="Paella dish"
                     />
                     <CardContent>
-                        <Typography component="p">
+                        {/* <Typography component="p">
                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
-          </Typography>
+          </Typography> */}
                     </CardContent>
                     <CardActions className={classes.actions} disableActionSpacing>
                         <IconButton aria-label="Add to favorites">
@@ -133,6 +141,7 @@ class RecipeReviewCard extends React.Component {
                     </Collapse>
                 </Card>
             </Grid>
+            )
             // </Grid>
         );
     }
