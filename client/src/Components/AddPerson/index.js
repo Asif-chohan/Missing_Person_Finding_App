@@ -1,6 +1,7 @@
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
+import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
 import Paper from '@material-ui/core/Paper';
 import Radio from '@material-ui/core/Radio';
@@ -25,16 +26,26 @@ class AddPerson extends React.Component {
         super(props)
         this.state = {
             open: false,
+            name: '',
+            age: '',
+            description: '',
+            gender: '',
+            area: '',
+            city: '',
+            province: '',
+            country: '',
             value: 0,
             file: null,
             activeClass: "imgHide",
-            selectedValue: 'a',
+            selectedValue: '',
         }
         this.handleImageChange = this.handleImageChange.bind(this)
     }
     handleChangeRadio = event => {
         this.setState({ selectedValue: event.target.value });
     };
+
+
 
     handleImageChange(event) {
 
@@ -56,6 +67,17 @@ class AddPerson extends React.Component {
     handleChange = (event, value) => {
         this.setState({ value });
     };
+    handleInputData = (evt) => {
+
+        this.setState({
+            [evt.target.name]: evt.target.value
+
+        })
+    }
+    handleReportData = () => {
+
+        console.log(this.state)
+    }
 
     render() {
         const { classes } = this.props;
@@ -65,14 +87,40 @@ class AddPerson extends React.Component {
             <div className={classes.root}>
                 <h1><center>Missing & Found Form</center></h1>
                 <Grid container style={{ paddingBottom: '100px' }}>
-                    <Grid md={3}></Grid>
+                    <Grid md={3} > </Grid>
                     <Grid md={6}>
                         <Paper className={classes.paper}>
                             <Grid container style={{ paddingRight: '30px', paddingLeft: '30px', paddingBottom: '50px' }}>
+                                
+                                <Grid md={12}>
+                                <Radio
+                                checked={this.state.selectedValue === 'Missing'}
+                                onChange={this.handleChangeRadio}
+                                value="Missing"
+
+                                label="Male"
+                                name="radio-button-demo"
+                                aria-label="A"
+                            />
+                            <span>Missing</span>
+                            <Radio
+                                checked={this.state.selectedValue === 'Found'}
+                                onChange={this.handleChangeRadio}
+                                value="Found"
+                                label="Found"
+                                name="radio-button-demo"
+                                aria-label="B"
+                            />
+
+                            <span>Found</span>
+                                </Grid>
+
                                 <Grid md={12}>
                                     <TextField
                                         id="standard-name-input"
                                         label="Name"
+                                        name='name'
+                                        onChange={this.handleInputData}
                                         className={classes.textField}
                                         type="text"
                                         autoComplete="current-name"
@@ -84,6 +132,8 @@ class AddPerson extends React.Component {
                                     <TextField
                                         id="standard-age-input"
                                         label="Age"
+                                        name="age"
+                                        onChange={this.handleInputData}
                                         className={classes.textField}
                                         type="text"
                                         autoComplete="current-age"
@@ -102,6 +152,8 @@ class AddPerson extends React.Component {
                                 </Grid>
                                 <Grid md={12}>
                                     <TextField
+                                        onChange={this.handleInputData}
+                                        name="description"
                                         id="standard-description-input"
                                         label="Description"
                                         className={classes.textField}
@@ -113,42 +165,18 @@ class AddPerson extends React.Component {
                                 </Grid>
                                 <Grid md={12}>
                                     <br />
-                                    {/* <FormControl component="fieldset" className={classes.formControl}>
-                                        <FormLabel component="legend">Gender</FormLabel> */}
 
-                                    {/* <RadioGroup
-                                            aria-label="Gender"
-                                            name="gender1"
-                                            className={classes.group}
-                                            value={this.state.value}
-                                            onChange={this.handleChange}
-                                        > */}
-                                    {/* <Grid container> */}
-                                    {/* <Grid xs="6"> */}
-                                    {/* <div className="forRadioMaleCustom"> */}
-                                    {/* <FormControlLabel value="male" control={<Radio />} label="Male" /> */}
-                                    {/* </div> */}
-                                    {/* </Grid> */}
-                                    {/* <Grid xs="6"> */}
-                                    {/* <div className="forRadioCustom"> */}
-                                    {/* <FormControlLabel value="female" control={<Radio />} label="Female" /> */}
-                                    {/* </div> */}
-                                    {/* </Grid> */}
-
-                                    {/* </Grid> */}
-
-                                    {/* </RadioGroup>
-                                    </FormControl> */}
-<p className='genderstyle'>Gender</p>
+                                    <p className='genderstyle'>Gender</p>
                                     <Radio
                                         checked={this.state.selectedValue === 'Male'}
                                         onChange={this.handleChangeRadio}
                                         value="Male"
+
                                         label="Male"
                                         name="radio-button-demo"
                                         aria-label="A"
                                     />
-                                        <span>Male</span>
+                                    <span>Male</span>
                                     <Radio
                                         checked={this.state.selectedValue === 'Female'}
                                         onChange={this.handleChangeRadio}
@@ -158,7 +186,7 @@ class AddPerson extends React.Component {
                                         aria-label="B"
                                     />
 
-                                        <span>Female</span>
+                                    <span>Female</span>
 
 
 
@@ -185,7 +213,9 @@ class AddPerson extends React.Component {
                                 <Grid md={12}>
                                     <TextField
                                         id="standard-area-input"
+                                        onChange={this.handleInputData}
                                         label="Area"
+                                        name="area"
                                         className={classes.textField}
                                         type="text"
                                         autoComplete="current-area"
@@ -197,8 +227,10 @@ class AddPerson extends React.Component {
                                 </Grid>
                                 <Grid md={12}>
                                     <TextField
+                                        name="city"
                                         id="standard-city-input"
                                         placeholder="City"
+                                        onChange={this.handleInputData}
                                         className={classes.textField}
                                         type="text"
                                         autoComplete="current-city"
@@ -211,10 +243,12 @@ class AddPerson extends React.Component {
 
                                 <Grid md={12}>
                                     <TextField
+                                        name="province"
                                         id="standard-province-input"
                                         placeholder="Province"
                                         className={classes.textField}
                                         type="text"
+                                        onChange={this.handleInputData}
                                         autoComplete="current-province"
                                         margin="normal"
                                         fullWidth
@@ -228,6 +262,8 @@ class AddPerson extends React.Component {
                                         placeholder="Country"
                                         className={classes.textField}
                                         type="text"
+                                        onChange={this.handleInputData}
+                                        name="country"
                                         autoComplete="current-country"
                                         margin="normal"
                                         fullWidth
@@ -250,12 +286,20 @@ class AddPerson extends React.Component {
                                             return googleData.renderMap(googleMaps)
                                         }} />
                                     </div>
+                                    <Button
+                                        style={{ marginLeft: '38vw', marginTop: '15px' }}
+                                        color="primary"
+                                        variant="raised"
+                                        onClick={this.handleReportData}
+                                    >Submit</Button>
                                 </Grid>
 
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid md={3}></Grid>
+                    <Grid md={3}>
+
+                    </Grid>
                 </Grid>
 
             </div >
