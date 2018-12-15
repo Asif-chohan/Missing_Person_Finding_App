@@ -1,10 +1,10 @@
-import { SIGN_IN, CONTACT_US } from '../Constants';
+import { SIGN_IN, CONTACT_US, ADD_PERSON } from '../Constants';
 
 
 const INITIAL_STATE = {
-    LoginDetail: [],
-    UserInfo: [],
-    ContactUs: [],
+    LoginDetail: {},
+    AddPerson: [],
+    ContactUs: {},
 };
 
 function AllReducers(state = INITIAL_STATE, action) {
@@ -23,6 +23,18 @@ function AllReducers(state = INITIAL_STATE, action) {
                     LoginDetail: data
                 }
             }
+
+        case ADD_PERSON:
+            {
+                var list = state.AddPerson;
+                var newPersons = list.concat([action.payload]);
+                return {
+                    ...state,
+                    AddPerson: newPersons
+                }
+            }
+
+
 
         case CONTACT_US:
             {

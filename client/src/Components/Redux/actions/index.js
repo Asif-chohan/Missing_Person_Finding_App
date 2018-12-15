@@ -1,7 +1,7 @@
 
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { SIGN_IN } from '../Constants';
+import { SIGN_IN, ADD_PERSON } from '../Constants';
 
 
 
@@ -37,6 +37,25 @@ export function SignUP(data) {
                 toast.success("Your account is created Successfully ");
                 dispatch({
                     type: SIGN_IN,
+                    payload: data
+                });
+            }).catch(() => {
+                toast.error("Error Occored! Please Try Again Later");
+            })
+    }
+}
+
+// Add Person ActionContact
+
+export function addPerson(data) {
+
+    return (dispatch) => {
+        axios.post(window.baseURL + "/user/addPerson", data)
+            .then(() => {
+
+                toast.success("Sucessfully Added detail of your Person");
+                dispatch({
+                    type: ADD_PERSON,
                     payload: data
                 });
             }).catch(() => {
