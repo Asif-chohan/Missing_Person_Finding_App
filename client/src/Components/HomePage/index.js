@@ -6,7 +6,7 @@ import PersonPage from "./PersonPage/PersonPage";
 import Search from "./Search/Search";
 import Footer from "../Footer/Footer";
 import { Button, Card, Grid, CardContent } from "@material-ui/core";
-
+import {Link} from 'react-router-dom';
 export default class Home extends Component {
   render() {
     return (
@@ -20,6 +20,7 @@ export default class Home extends Component {
           <Grid xs={3}>
             <Card style={{ margin: "5px 10px 0px 10px", height: "290px", textAlign: 'center', paddingTop: "50px"}}>
               <CardContent>Report a Missed Person</CardContent>
+              <Link to="/AddPerson">
               <Button
                 style={{
                   borderRadius: "42px",
@@ -32,6 +33,7 @@ export default class Home extends Component {
                 {" "}
                 Post a Request
               </Button>
+              </Link>
             </Card>
           </Grid>
         </Grid>
