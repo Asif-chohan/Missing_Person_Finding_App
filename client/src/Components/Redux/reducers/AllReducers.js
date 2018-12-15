@@ -1,9 +1,10 @@
-import { SIGN_IN } from '../actions';
+import { SIGN_IN, CONTACT_US } from '../Constants';
 
 
 const INITIAL_STATE = {
     LoginDetail: [],
     UserInfo: [],
+    ContactUs: [],
 };
 
 function AllReducers(state = INITIAL_STATE, action) {
@@ -22,6 +23,27 @@ function AllReducers(state = INITIAL_STATE, action) {
                     LoginDetail: data
                 }
             }
+
+        case CONTACT_US:
+            {
+                const data = {
+                    username: action.payload.username,
+                    email: action.payload.email,
+                    blogTitle: action.payload.blogTitle,
+                    fileUpload: action.payload.fileUpload,
+                    imagePreviewURL: action.payload.imagePreviewURL,
+
+                }
+                return {
+                    ...state,
+                    ContactUs: data
+                }
+
+            }
+
+
+
+
 
 
         default:

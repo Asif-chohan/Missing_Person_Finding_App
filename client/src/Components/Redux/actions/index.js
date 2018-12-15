@@ -44,3 +44,22 @@ export function SignUP(data) {
             })
     }
 }
+
+// Contact us Actions
+
+export function contactus(data) {
+
+    return (dispatch) => {
+        axios.post(window.baseURL + "/user/contactus", data)
+            .then(() => {
+
+                toast.success("your response has been  sent");
+                dispatch({
+                    type: CONTACT_US,
+                    payload: data
+                });
+            }).catch(() => {
+                toast.error("Error Occored! Please Try Again Later");
+            })
+    }
+}
