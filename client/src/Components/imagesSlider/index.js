@@ -54,6 +54,8 @@ class ImageSlider extends React.Component {
       return (
         <div className={classNames('slider', { 's--ready': sliderReady })}>
           <p className="slider__top-heading">Travelers</p>
+          
+          
           <div className="slider__slides">
             {this.props.slides.map((slide, index) => (
               <div
@@ -76,7 +78,9 @@ class ImageSlider extends React.Component {
                 </div>
               </div>
             ))}
+            
           </div>
+          {/* <h1 className="slider__bottom-heading">Search</h1> */}
           <div className="slider__control" onClick={() => this.changeSlides(-1)} />
           <div className="slider__control slider__control--right" onClick={() => this.changeSlides(1)} />
         </div>

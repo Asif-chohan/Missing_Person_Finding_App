@@ -11,19 +11,31 @@ export const styles = {
   // },
 
   appBar: {
-    backgroundColor: "#005E58",
-    marginBottom: '40px'
+    backgroundColor: "#ffffff",
+    color:"#242424",
+    marginBottom: '40px',
+    boxShadow: '7px 4px 8px -6px'
+    
   },
   tabCustom: {
     height: "65px"
   },
   indicator: {
-    color: "red"
+    // color: "red"
   },
   inkBar: {
     backgroundColor: "yellow"
   },
   headingCustom:{
     paddingLeft: "60px !important",
-  }
+  },
+  
+    signinButton:{
+      height: '40px',
+      width: '100px',
+      margin: '12px',
+      backgroundColor:'#06cf1e',
+      borderRadius:'42px'
+    }
+  
 };
