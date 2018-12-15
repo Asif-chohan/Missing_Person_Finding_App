@@ -4,6 +4,7 @@ import Home from '../HomePage';
 import Login from '../login';
 import Signup from '../signup';
 import InspectorForm from '../policeForm'
+import AddPerson from '../AddPerson'
 
 
 export default class Navigation extends Component {
@@ -15,6 +16,7 @@ export default class Navigation extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/PolicePortal" component={InspectorForm} />
+          <Route exact path="/AddPerson" component={AddPerson} />
 
      
         </div>
