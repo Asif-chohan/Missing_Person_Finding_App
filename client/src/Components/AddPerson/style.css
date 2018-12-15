@@ -4,7 +4,8 @@ h3
 
   
 .imgPreview
- { text-align: center;
+ { 
+  text-align: center;
   margin: 5px 15px;
   height: 200px;
   width: 85%;
@@ -16,11 +17,19 @@ h3
 
 }
 .imgHide{
-  display: none;
+  /* display: none; */
+  /* border: 1px solid red */
 }
   img
-   { width: 100%;
-    height: 100%}
+   { 
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .profileImage{
+    display: none;
+  }
   
 
   
@@ -37,4 +46,6 @@ h3
   .genderstyle{
     color: gray;
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }

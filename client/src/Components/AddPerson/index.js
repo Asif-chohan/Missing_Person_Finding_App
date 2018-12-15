@@ -11,6 +11,8 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from "prop-types";
 import React from "react";
 
+import profileImage from './profile.jpg';
+
 // Google Map
 import googleData from './googleMap.js';
 import GoogleMapLoader from "react-google-maps-loader";
@@ -35,8 +37,8 @@ class AddPerson extends React.Component {
             province: '',
             country: '',
             value: 0,
-            file: null,
-            activeClass: "imgHide",
+            file: profileImage,
+            activeClass: "imgPreview",
             selectedValue: '',
         }
         this.handleImageChange = this.handleImageChange.bind(this)
@@ -57,7 +59,7 @@ class AddPerson extends React.Component {
 
         } else {
             this.setState({
-                file: null
+                file: profileImage
             })
 
         }
@@ -84,37 +86,19 @@ class AddPerson extends React.Component {
         const { value } = this.state;
 
         return (
-            <div className={classes.root}>
+            <div className={classes.root} style={{paddingTop: '20px'}}>
                 <h1><center>Missing & Found Form</center></h1>
-                <Grid container style={{ paddingBottom: '100px' }}>
+                <Grid container style={{ paddingBottom: '100px', paddingTop: '20px' }}>
                     <Grid md={3} > </Grid>
                     <Grid md={6}>
                         <Paper className={classes.paper}>
                             <Grid container style={{ paddingRight: '30px', paddingLeft: '30px', paddingBottom: '50px' }}>
+
                                 
+
                                 <Grid md={12}>
-                                <Radio
-                                checked={this.state.selectedValue === 'Missing'}
-                                onChange={this.handleChangeRadio}
-                                value="Missing"
-
-                                label="Male"
-                                name="radio-button-demo"
-                                aria-label="A"
-                            />
-                            <span>Missing</span>
-                            <Radio
-                                checked={this.state.selectedValue === 'Found'}
-                                onChange={this.handleChangeRadio}
-                                value="Found"
-                                label="Found"
-                                name="radio-button-demo"
-                                aria-label="B"
-                            />
-
-                            <span>Found</span>
-                                </Grid>
-
+                                <Grid container >
+                                <Grid md={6}>
                                 <Grid md={12}>
                                     <TextField
                                         id="standard-name-input"
@@ -141,7 +125,44 @@ class AddPerson extends React.Component {
                                         fullWidth
                                     />
                                 </Grid>
+                                </Grid>
                                 <Grid md={6}>
+                                <label htmlFor="userProfile">
+                                <input type="file"  name="userProfile" id="userProfile" onChange={this.handleImageChange} className="profileImage" />
+                                <img src={this.state.file} alt="Profile" className={this.state.activeClass} />
+                                </label>
+                                {/* <img src={this.state.file} className={this.state.activeClass} /> */}
+
+                                </Grid>
+
+                                </Grid>
+                                </Grid>
+
+
+                                
+                                <Grid md={12}>
+                                    <Radio
+                                        checked={this.state.selectedValue === 'Missing'}
+                                        onChange={this.handleChangeRadio}
+                                        value="Missing"
+
+                                        label="Male"
+                                        name="radio-button-demo"
+                                        aria-label="A"
+                                    />
+                                    <span>Missing</span>
+                                    <Radio
+                                        checked={this.state.selectedValue === 'Found'}
+                                        onChange={this.handleChangeRadio}
+                                        value="Found"
+                                        label="Found"
+                                        name="radio-button-demo"
+                                        aria-label="B"
+                                    />
+
+                                    <span>Found</span>
+                                </Grid>
+                                {/* <Grid md={6}>
                                     <br />
                                     <input type="file" onChange={this.handleImageChange} className="submitButton" />
                                 </Grid>
@@ -149,7 +170,7 @@ class AddPerson extends React.Component {
                                 <Grid md={6}>
                                     <br />
                                     <img src={this.state.file} className={this.state.activeClass} />
-                                </Grid>
+                                </Grid> */}
                                 <Grid md={12}>
                                     <TextField
                                         onChange={this.handleInputData}
@@ -208,40 +229,45 @@ class AddPerson extends React.Component {
 
                                 {/* location session */}
 
-                                <Grid><h2>Location</h2></Grid>
+                                <Grid><h2><br />Location</h2></Grid>
 
                                 <Grid md={12}>
-                                    <TextField
-                                        id="standard-area-input"
-                                        onChange={this.handleInputData}
-                                        label="Area"
-                                        name="area"
-                                        className={classes.textField}
-                                        type="text"
-                                        autoComplete="current-area"
-                                        margin="normal"
-                                        fullWidth
-                                        id="searchTextField1"
-                                        name="area"
-                                    />
-                                </Grid>
-                                <Grid md={12}>
-                                    <TextField
-                                        name="city"
-                                        id="standard-city-input"
-                                        placeholder="City"
-                                        onChange={this.handleInputData}
-                                        className={classes.textField}
-                                        type="text"
-                                        autoComplete="current-city"
-                                        margin="normal"
-                                        fullWidth
-                                        id="city"
-                                        name="city"
-                                    />
-                                </Grid>
+                                <Grid container>
+                                    <Grid md={5}>
+                                        <TextField
+                                            id="standard-area-input"
+                                            onChange={this.handleInputData}
+                                            label="Area"
+                                            name="area"
+                                            className={classes.textField}
+                                            type="text"
+                                            autoComplete="current-area"
+                                            margin="normal"
+                                            fullWidth
+                                            id="searchTextField1"
+                                            name="area"
+                                        />
+                                    </Grid>
+                                    <Grid md={2}></Grid>
+                                    <Grid md={5}>
+                                        <TextField
+                                            name="city"
+                                            id="standard-city-input"
+                                            // placeholder="City"
+                                            label="City"
+                                            onChange={this.handleInputData}
+                                            className={classes.textField}
+                                            type="text"
+                                            autoComplete="current-city"
+                                            margin="normal"
+                                            fullWidth
+                                            id="city"
+                                            name="city"
+                                        />
+                                    </Grid>
+                                {/* </Grid> */}
 
-                                <Grid md={12}>
+                                <Grid md={5}>
                                     <TextField
                                         name="province"
                                         id="standard-province-input"
@@ -256,7 +282,8 @@ class AddPerson extends React.Component {
                                         name="province"
                                     />
                                 </Grid>
-                                <Grid md={12}>
+                                <Grid md={2}></Grid>
+                                <Grid md={5}>
                                     <TextField
                                         id="standard-country-input"
                                         placeholder="Country"
@@ -270,6 +297,9 @@ class AddPerson extends React.Component {
                                         id="country"
                                         name="country"
                                     />
+                                </Grid>
+
+                                </Grid>
                                 </Grid>
 
                                 {/* location session end */}
@@ -287,7 +317,7 @@ class AddPerson extends React.Component {
                                         }} />
                                     </div>
                                     <Button
-                                        style={{ marginLeft: '38vw', marginTop: '15px' }}
+                                        style={{ marginLeft: '38vw', marginTop: '15px', backgroundColor: '#06cf1e' }}
                                         color="primary"
                                         variant="raised"
                                         onClick={this.handleReportData}
