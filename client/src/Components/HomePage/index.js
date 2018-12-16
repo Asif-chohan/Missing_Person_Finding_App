@@ -77,8 +77,8 @@ const slides = [
       "https://kbr.id/media/?size=730x406&filename=Pakistan+Kidnappings+2_web_Naeem+Sahoutara+ed.jpg"
   },
   {
-    city: "Karachi",
-    country: "Sindh",
+    city: "",
+    country: "",
     img: s1
   },
   {

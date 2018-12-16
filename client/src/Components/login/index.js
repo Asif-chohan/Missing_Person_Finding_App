@@ -92,7 +92,7 @@ class SignIn extends Component {
                 style={{ background: "#06cf1e", color: "white" }}
                 // color="primary"
                 className={classes.submit}
-                onClick={this.handleSubmitForm}
+                onClick={this.handleSubmitForm.bind(this)}
               >
                 Sign in
               </Button>

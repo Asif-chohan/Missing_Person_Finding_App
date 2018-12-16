@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
-window.baseURL = window.location.hostname === 'localhost' ? 'http://localhost:8080' : '';
+window.baseURL = window.location.hostname === 'https://missing-found-person.herokuapp.com';
 
 ReactDOM.render(
     <Provider store={store}>

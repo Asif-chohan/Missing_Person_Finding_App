@@ -216,6 +216,7 @@ body {
   height: 100%;
   background-image: inherit;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
   transition: opacity 0.25s;
   opacity: 0;
