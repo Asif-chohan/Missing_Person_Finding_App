@@ -2,6 +2,8 @@ import React from 'react';
 import { Grid, Card } from '@material-ui/core';
 import slide1 from '../../asserts/logo.png';
 import Footer from '../Footer/Footer';
+import a from '../../asserts/a.jpg'
+
 import PersonDumyData from '../HomePage/FoundPerson/personDummydata'
 import {Link} from 'react-router-dom'
 const PersonDetail = () => (
@@ -23,7 +25,7 @@ const PersonDetail = () => (
 
 
                 <Card style={{ margin: '0px 10px 0px 10px', height: '290px' }}>
-                    <img src={slide1} style={{ borderRadius: "50px", height: '400px', width: '100%', padding: '10px' }} alt="Image" />
+                    <img src={a} style={{ borderRadius: "50px", height: '400px', width: '100%', padding: '10px' }} alt="Image" />
                 </Card>
 
             </Grid>
