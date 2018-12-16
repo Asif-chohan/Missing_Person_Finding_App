@@ -6,7 +6,10 @@ import PersonPage from "./PersonPage/PersonPage";
 import Search from "./Search/Search";
 import Footer from "../Footer/Footer";
 import { Button, Card, Grid, CardContent } from "@material-ui/core";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import s1 from '../../asserts/s1.jpg';
+
 export default class Home extends Component {
   render() {
     return (
@@ -18,20 +21,20 @@ export default class Home extends Component {
             <ImageSlider slides={slides} />
           </Grid>
           <Grid xs={3}>
-            <Card style={{ margin: "5px 10px 0px 10px", height: "290px", textAlign: 'center', paddingTop: "50px"}}>
+            <Card style={{ margin: "5px 10px 0px 10px", height: "290px", textAlign: 'center', paddingTop: "50px" }}>
               <CardContent>Report a Missed Person</CardContent>
               <Link to="/AddPerson">
-              <Button
-                style={{
-                  borderRadius: "42px",
-                  height: "40px",
-                  margin: "12px",
-                  color: "white",
-                  backgroundColor: "#06cf1e"
-                }}
-              >
-                {" "}
-                Post a Request
+                <Button
+                  style={{
+                    borderRadius: "42px",
+                    height: "40px",
+                    margin: "12px",
+                    color: "white",
+                    backgroundColor: "#06cf1e"
+                  }}
+                >
+                  {" "}
+                  Post a Request
               </Button>
               </Link>
             </Card>
@@ -39,7 +42,7 @@ export default class Home extends Component {
         </Grid>
         <Search />
         <Tabs />
-       
+
         <Footer />
       </div>
     );
@@ -68,21 +71,24 @@ export default class Home extends Component {
 
 const slides = [
   {
-    city: "Paris",
-    country: "France",
-    img: "http://i.dawn.com/primary/2016/08/57acbf671d860.jpg"
-  },
-  {
-    city: "Singapore",
+    city: "Faisalabad",
+    country: "Punjab",
     img:
       "https://kbr.id/media/?size=730x406&filename=Pakistan+Kidnappings+2_web_Naeem+Sahoutara+ed.jpg"
   },
   {
-    city: "Singapore",
-    img:
-      "https://kbr.id/media/?size=730x406&filename=Pakistan+Kidnappings+2_web_Naeem+Sahoutara+ed.jpg"
+    city: "Karachi",
+    country: "Sindh",
+    img: s1
   },
- 
+  {
+    city: "Quetta",
+    country: "Balochistan",
+    img:
+      "http://i.dawn.com/primary/2016/08/57acbf671d860.jpg"
+  },
+
+
 
   // {
   //   city: "Moscow",
