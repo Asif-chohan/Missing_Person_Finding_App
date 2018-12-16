@@ -20,7 +20,7 @@ export default class Home extends Component {
           <Grid xs={3}>
             <Card style={{ margin: "5px 10px 0px 10px", height: "290px", textAlign: 'center', paddingTop: "50px"}}>
               <CardContent>Report a Missed Person</CardContent>
-              <Link to="/AddPerson">
+              <Link to="/AddPerson" style={{textDecoration: "none"}}>
               <Button
                 style={{
                   borderRadius: "42px",

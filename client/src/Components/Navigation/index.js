@@ -5,7 +5,8 @@ import Login from '../login';
 import Signup from '../signup';
 import InspectorForm from '../policeForm'
 import AddPerson from '../AddPerson'
-
+import PersonDetail from '../PersonDetail/PersonDetail'
+import FoundPersonDescription from '../FoundPersonDescription/PersonDetail';
 
 export default class Navigation extends Component {
   render() {
@@ -17,6 +18,9 @@ export default class Navigation extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/PolicePortal" component={InspectorForm} />
           <Route exact path="/AddPerson" component={AddPerson} />
+          <Route exact path="/description" component={PersonDetail} />
+          <Route exact path="/Founddescription" component={FoundPersonDescription} />
+
 
      
         </div>

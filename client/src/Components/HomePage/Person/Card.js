@@ -17,6 +17,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import fakePersons from './personDummydata';
 // import img from '../../../asserts/a.jpeg'
@@ -62,7 +63,10 @@ class RecipeReviewCard extends React.Component {
         return (
             // <Grid container spacing={24}>
             fakePersons.map((person, index) =>
+
             <Grid item xs={12} sm={3}>
+            <Link to="/description">
+
                 <Card className={classes.card}>
                     <CardHeader
                     
@@ -90,9 +94,11 @@ class RecipeReviewCard extends React.Component {
                             <Typography>{person.name}</Typography>
                         </CardContent>
                 </Card>
+            </Link>
             </Grid>
             )
             // </Grid>
+
         );
     }
 }

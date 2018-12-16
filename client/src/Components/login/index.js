@@ -98,7 +98,7 @@ class SignIn extends Component {
               </Button>
             </form>
             <p className={classes.notMember}>Not a member?</p>
-            <Link className={classes.signup} to="/signup">
+            <Link className={classes.signup} to="/signup" style={{textDecoration: "none"}}>
               Sign Up
             </Link>
           </Paper>

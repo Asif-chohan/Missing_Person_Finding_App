@@ -58,7 +58,7 @@ class Navbar extends React.Component {
                     <Tab className={classes.tabCustom} label="Contact us" />
                     <Tab className={classes.tabCustom} label="Blogs" />
                   {/* <Tab className={classes.tabCustom} label="Signin" /> */}
-                  <Link to="/login">
+                  <Link to="/login" style={{textDecoration: "none"}}>
                     <Button
                       className={classes.signinButton}
                       size="small"
