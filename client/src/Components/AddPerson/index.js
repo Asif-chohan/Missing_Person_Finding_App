@@ -10,6 +10,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import PropTypes from "prop-types";
 import React from "react";
+import {Link} from 'react-router-dom';
 
 import profileImage from './profile.jpg';
 
@@ -86,62 +87,19 @@ class AddPerson extends React.Component {
         const { value } = this.state;
 
         return (
-            <div className={classes.root} style={{paddingTop: '20px'}}>
+            <div className={classes.root} style={{ paddingTop: '20px' }}>
                 <h1><center>Missing & Found Form</center></h1>
                 <Grid container style={{ paddingBottom: '100px', paddingTop: '20px' }}>
                     <Grid md={3} > </Grid>
                     <Grid md={6}>
                         <Paper className={classes.paper}>
-                            <Grid container style={{ paddingRight: '30px', paddingLeft: '30px', paddingBottom: '50px' }}>
-
-                                
-
-                                <Grid md={12}>
-                                <Grid container >
-                                <Grid md={6}>
-                                <Grid md={12}>
-                                    <TextField
-                                        id="standard-name-input"
-                                        label="Name"
-                                        name='name'
-                                        onChange={this.handleInputData}
-                                        className={classes.textField}
-                                        type="text"
-                                        autoComplete="current-name"
-                                        margin="normal"
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid md={12}>
-                                    <TextField
-                                        id="standard-age-input"
-                                        label="Age"
-                                        name="age"
-                                        onChange={this.handleInputData}
-                                        className={classes.textField}
-                                        type="text"
-                                        autoComplete="current-age"
-                                        margin="normal"
-                                        fullWidth
-                                    />
-                                </Grid>
-                                </Grid>
-                                <Grid md={6}>
-                                <label htmlFor="userProfile">
-                                <input type="file"  name="userProfile" id="userProfile" onChange={this.handleImageChange} className="profileImage" />
-                                <img src={this.state.file} alt="Profile" className={this.state.activeClass} />
-                                </label>
-                                {/* <img src={this.state.file} className={this.state.activeClass} /> */}
-
-                                </Grid>
-
-                                </Grid>
-                                </Grid>
-
-
-                                
-                                <Grid md={12}>
-                                    <Radio
+                            <Grid md={12}
+                                container
+                                style={{ marginBottom: '30px' }}
+                            >
+                                <Grid md={2}></Grid>
+                                <Grid md={8}>
+                                <Radio
                                         checked={this.state.selectedValue === 'Missing'}
                                         onChange={this.handleChangeRadio}
                                         value="Missing"
@@ -150,7 +108,9 @@ class AddPerson extends React.Component {
                                         name="radio-button-demo"
                                         aria-label="A"
                                     />
-                                    <span>Missing</span>
+                                    <span
+                                    style={{marginRight:'150px'}}                                    
+                                    >Missing</span>
                                     <Radio
                                         checked={this.state.selectedValue === 'Found'}
                                         onChange={this.handleChangeRadio}
@@ -162,6 +122,57 @@ class AddPerson extends React.Component {
 
                                     <span>Found</span>
                                 </Grid>
+                                <Grid md={2}></Grid>
+                            </Grid>
+                            <Grid container style={{ paddingRight: '30px', paddingLeft: '30px', paddingBottom: '50px' }}>
+
+
+
+                                <Grid md={12}>
+                                    <Grid container >
+                                        <Grid md={6}>
+                                            <Grid md={12}>
+                                                <TextField
+                                                    id="standard-name-input"
+                                                    label="Name"
+                                                    name='name'
+                                                    onChange={this.handleInputData}
+                                                    className={classes.textField}
+                                                    type="text"
+                                                    autoComplete="current-name"
+                                                    margin="normal"
+                                                    fullWidth
+                                                />
+                                            </Grid>
+                                            <Grid md={12}>
+                                                <TextField
+                                                    id="standard-age-input"
+                                                    label="Age"
+                                                    name="age"
+                                                    onChange={this.handleInputData}
+                                                    className={classes.textField}
+                                                    type="text"
+                                                    autoComplete="current-age"
+                                                    margin="normal"
+                                                    fullWidth
+                                                />
+                                            </Grid>
+                                        </Grid>
+                                        <Grid md={6}>
+                                            <label htmlFor="userProfile">
+                                                <input type="file" name="userProfile" id="userProfile" onChange={this.handleImageChange} className="profileImage" />
+                                                <img src={this.state.file} alt="Profile" className={this.state.activeClass} />
+                                            </label>
+                                            {/* <img src={this.state.file} className={this.state.activeClass} /> */}
+
+                                        </Grid>
+
+                                    </Grid>
+                                </Grid>
+
+
+
+
                                 {/* <Grid md={6}>
                                     <br />
                                     <input type="file" onChange={this.handleImageChange} className="submitButton" />
@@ -184,10 +195,17 @@ class AddPerson extends React.Component {
                                         fullWidth
                                     />
                                 </Grid>
-                                <Grid md={12}>
-                                    <br />
+                                <Grid md={12}
+                                 container
+                                >
+                                <Grid md={2}>
+                                <p className='genderstyle'>Gender</p>
+                               
+                                </Grid>
+                                
+                                <Grid md={8}>
 
-                                    <p className='genderstyle'>Gender</p>
+                                    
                                     <Radio
                                         checked={this.state.selectedValue === 'Male'}
                                         onChange={this.handleChangeRadio}
@@ -197,7 +215,9 @@ class AddPerson extends React.Component {
                                         name="radio-button-demo"
                                         aria-label="A"
                                     />
-                                    <span>Male</span>
+                                    <span
+                                    style={{marginRight:'150px'}}
+                                    >Male</span>
                                     <Radio
                                         checked={this.state.selectedValue === 'Female'}
                                         onChange={this.handleChangeRadio}
@@ -208,7 +228,8 @@ class AddPerson extends React.Component {
                                     />
 
                                     <span>Female</span>
-
+                                    </Grid>
+                                    <Grid md={2}></Grid>
 
 
                                 </Grid>
@@ -232,74 +253,74 @@ class AddPerson extends React.Component {
                                 <Grid><h2><br />Location</h2></Grid>
 
                                 <Grid md={12}>
-                                <Grid container>
-                                    <Grid md={5}>
-                                        <TextField
-                                            id="standard-area-input"
-                                            onChange={this.handleInputData}
-                                            label="Area"
-                                            name="area"
-                                            className={classes.textField}
-                                            type="text"
-                                            autoComplete="current-area"
-                                            margin="normal"
-                                            fullWidth
-                                            id="searchTextField1"
-                                            name="area"
-                                        />
-                                    </Grid>
-                                    <Grid md={2}></Grid>
-                                    <Grid md={5}>
-                                        <TextField
-                                            name="city"
-                                            id="standard-city-input"
-                                            // placeholder="City"
-                                            label="City"
-                                            onChange={this.handleInputData}
-                                            className={classes.textField}
-                                            type="text"
-                                            autoComplete="current-city"
-                                            margin="normal"
-                                            fullWidth
-                                            id="city"
-                                            name="city"
-                                        />
-                                    </Grid>
-                                {/* </Grid> */}
+                                    <Grid container>
+                                        <Grid md={5}>
+                                            <TextField
+                                                id="standard-area-input"
+                                                onChange={this.handleInputData}
+                                                label="Area"
+                                                name="area"
+                                                className={classes.textField}
+                                                type="text"
+                                                autoComplete="current-area"
+                                                margin="normal"
+                                                fullWidth
+                                                id="searchTextField1"
+                                                name="area"
+                                            />
+                                        </Grid>
+                                        <Grid md={2}></Grid>
+                                        <Grid md={5}>
+                                            <TextField
+                                                name="city"
+                                                id="standard-city-input"
+                                                // placeholder="City"
+                                                label="City"
+                                                onChange={this.handleInputData}
+                                                className={classes.textField}
+                                                type="text"
+                                                autoComplete="current-city"
+                                                margin="normal"
+                                                fullWidth
+                                                id="city"
+                                                name="city"
+                                            />
+                                        </Grid>
+                                        {/* </Grid> */}
 
-                                <Grid md={5}>
-                                    <TextField
-                                        name="province"
-                                        id="standard-province-input"
-                                        placeholder="Province"
-                                        className={classes.textField}
-                                        type="text"
-                                        onChange={this.handleInputData}
-                                        autoComplete="current-province"
-                                        margin="normal"
-                                        fullWidth
-                                        id="province"
-                                        name="province"
-                                    />
-                                </Grid>
-                                <Grid md={2}></Grid>
-                                <Grid md={5}>
-                                    <TextField
-                                        id="standard-country-input"
-                                        placeholder="Country"
-                                        className={classes.textField}
-                                        type="text"
-                                        onChange={this.handleInputData}
-                                        name="country"
-                                        autoComplete="current-country"
-                                        margin="normal"
-                                        fullWidth
-                                        id="country"
-                                        name="country"
-                                    />
-                                </Grid>
+                                        <Grid md={5}>
+                                            <TextField
+                                                name="province"
+                                                id="standard-province-input"
+                                                placeholder="Province"
+                                                className={classes.textField}
+                                                type="text"
+                                                onChange={this.handleInputData}
+                                                autoComplete="current-province"
+                                                margin="normal"
+                                                fullWidth
+                                                id="province"
+                                                name="province"
+                                            />
+                                        </Grid>
+                                        <Grid md={2}></Grid>
+                                        <Grid md={5}>
+                                            <TextField
+                                                id="standard-country-input"
+                                                placeholder="Country"
+                                                className={classes.textField}
+                                                type="text"
+                                                onChange={this.handleInputData}
+                                                name="country"
+                                                autoComplete="current-country"
+                                                margin="normal"
+                                                fullWidth
+                                                id="country"
+                                                name="country"
+                                            />
+                                        </Grid>
 
-                                </Grid>
+                                    </Grid>
                                 </Grid>
 
                                 {/* location session end */}
@@ -321,13 +342,18 @@ class AddPerson extends React.Component {
                                         color="primary"
                                         variant="raised"
                                         onClick={this.handleReportData}
-                                    >Submit</Button>
+                                       
+                                    >
+                                    <Link
+                                    style={{textDecoration:'none', color:'white'}}
+                                    to="/">Submit</Link>
+                                    </Button>
                                 </Grid>
 
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid md={3}>
+                    <Grid md={3}>   
 
                     </Grid>
                 </Grid>
